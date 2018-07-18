@@ -80,11 +80,13 @@ class Vips:
             blockList.clear()
             be.filList(block)
             blockList = be.blockList
+            """
             for newBlock in blockList:
                 for oldBlock in tempList:
                     if newBlock.id == oldBlock.id:
                         blockList.remove(newBlock)
                         break
+            """
             #ImageOut.outText(self.fileName, blockList , 'test')
             i+=1
               
