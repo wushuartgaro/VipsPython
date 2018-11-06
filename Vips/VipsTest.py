@@ -10,8 +10,8 @@ import Vips
 from urllib.parse import unquote
 
 def main():
-    vips = Vips.Vips(unquote("http://adam.goucher.ca/parkcalc/", encoding="utf-8"))
-    vips.setRound(2)
+    vips = Vips.Vips(unquote("https://www.v2ex.com/", encoding="utf-8"))
+    vips.setRound(10)
     vips.service()
     
 main()

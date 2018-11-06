@@ -26,7 +26,7 @@ class ImageOut:
         print('getting screenshot...')
         browser.set_window_size(default_width, total_height)
         browser.get(url)
-        time.sleep(3) 
+        #time.sleep(3) 
         browser.save_screenshot(screenshot_path+'.png')
         print('done')
     

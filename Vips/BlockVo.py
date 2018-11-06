@@ -49,7 +49,7 @@ class BlockVo:
                 self.x = box.visual_cues['bounds']['x'] if (box.visual_cues['bounds']['x']<self.x) else self.x
                 self.y = box.visual_cues['bounds']['y'] if (box.visual_cues['bounds']['y'] <self.y) else self.y
                 self.width = RBX - self.x
-                self.height = RBX - self.y
+                self.height = RBY - self.y
 
     @staticmethod  
     def refreshBlock(block):

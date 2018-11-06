@@ -73,7 +73,7 @@ class Vips:
             sepList.extend(horizList)
             sepList.extend(verticalList)
             sepList.sort(key=functools.cmp_to_key(Vips.sepCompare))
-            tempList = blockList
+            #tempList = blockList
             csc = ContentStructureConstruction()
             csc.service(sepList, block)
             BlockVo.refreshBlock(block)
@@ -177,7 +177,7 @@ class Vips:
         
     def getDomTree(self):
         self.browser.get(self.url)       
-        time.sleep(3)
+        #time.sleep(3)
         #read in our DOM js file as string
         file = open("dom.js", 'r')
         jscript = file.read()
