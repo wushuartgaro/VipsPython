@@ -73,20 +73,20 @@ class Vips:
             sepList.extend(horizList)
             sepList.extend(verticalList)
             sepList.sort(key=functools.cmp_to_key(Vips.sepCompare))
-            #tempList = blockList
+            tempList = blockList
             csc = ContentStructureConstruction()
             csc.service(sepList, block)
             BlockVo.refreshBlock(block)
             blockList.clear()
             be.filList(block)
             blockList = be.blockList
-            """
+        
             for newBlock in blockList:
                 for oldBlock in tempList:
                     if newBlock.id == oldBlock.id:
                         blockList.remove(newBlock)
                         break
-            """
+            
             #ImageOut.outText(self.fileName, blockList , 'test')
             i+=1
               

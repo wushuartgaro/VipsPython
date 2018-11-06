@@ -205,6 +205,8 @@ class SeparatorDetection:
         self.mergeSeparator()
         
     def mergeSeparator(self):
+        removed_list = []
+        removed_index = []
         temp1 = []
         temp1.extend(self.separatorList)
         for i in range (0, len(temp1)):
@@ -212,11 +214,16 @@ class SeparatorDetection:
             for j in range(i+1, len(temp1)):
                 sep2 = temp1[j]
                 if sep1.equals(sep2) and (abs(sep1.y-sep2.y) < 100):
+                    removed_index.append(j)
                     if sep2.y > sep1.y:
                         #question
                         sep1.y = sep1.y
                         sep1.height = abs(sep1.y - sep2.y) + sep2.height
                     elif sep2.y < sep1.y:
                         sep1.y = sep2.y
-                        sep1.height = abs(sep1.y - sep2.y) + sep1.height
-                    #self.separatorList.remove(sep2)
+                        sep1.height = abs(sep1.y - sep2.y) + sep1.height  
+        for index in removed_index:
+            removed_list.append(self.separatorList[index])
+        
+        for sep in removed_list:
+            removed_list.remove(sep)
